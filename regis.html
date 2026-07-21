@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register | Barangay Cogon Community Concerns Reporting and Monitoring System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="portal">
+
+  <div class="institutional">
+    <div>
+      <div class="eyebrow">Local Government Unit</div>
+      <div class="crest-row">
+        <div class="crest">
+          <img src="image/logo.png" alt="Barangay Cogon Seal" onerror="handleCrestError(this)">
+          <div class="crest-fallback" style="display:none;">BRGY<br>COGON</div>
+        </div>
+        <div>
+          <div class="org-name">Barangay Cogon</div>
+          <div class="org-sub">Office of the Barangay Council</div>
+        </div>
+      </div>
+
+      <div class="headline">Register as a <em>Verified Resident</em></div>
+      <div class="rule"></div>
+      <p class="lede">Create an account to file, track, and follow up on community concerns — from infrastructure requests to peace and order reports — directly with the barangay office.</p>
+    </div>
+
+    <div class="footnote">Information you provide is used solely for verifying residency and processing reports.<br>All activity on this portal is logged.</div>
+  </div>
+
+  <div class="form-panel">
+    <div class="form-heading">Create your account</div>
+    <p class="form-sub">Fill in your details to register as a resident.</p>
+
+    <form id="registerForm">
+      <div class="field">
+        
+        <input type="text" id="fullName" placeholder="Full Name" required>
+      </div>
+
+      <div class="field">
+        <input type="email" id="email" placeholder="Email Address" required>
+      </div>
+
+      <div class="field">
+        <input type="tel" id="contactNumber" placeholder="Contact Number" required>
+      </div>
+
+      <div class="field">
+        <input type="text" id="address" placeholder="Complete Address" required>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <input type="password" id="password" placeholder="Password" required>
+        </div>
+
+        <div class="field">
+          <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+        </div>
+      </div>
+
+      <p class="field-error" id="passwordError">Passwords do not match. Please try again.</p>
+
+      <button type="submit" class="btn-primary">Create Account</button>
+    </form>
+
+    <div class="divider">
+      <div class="line"></div>
+      <span>ALREADY REGISTERED?</span>
+      <div class="line"></div>
+    </div>
+
+    <a href="index.html" class="btn-secondary" style="display:block; text-align:center; text-decoration:none;">Sign in instead</a>
+
+    <p class="helper">Need help? Contact the Barangay Cogon office during business hours.</p>
+  </div>
+
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
