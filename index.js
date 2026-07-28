@@ -6,32 +6,41 @@ function handleCrestError(img) {
 
 // Login form handler
 document.addEventListener('DOMContentLoaded', function () {
+
+  // ================= LOGIN =================
   const loginForm = document.getElementById('loginForm');
+
   if (loginForm) {
     loginForm.addEventListener('submit', function (event) {
       event.preventDefault();
-      // TODO: connect to your authentication endpoint
+
       const username = document.getElementById('username').value;
       const password = document.getElementById('password').value;
+
+      if (username === "" || password === "") {
+        alert("Please enter your username and password.");
+        return;
+      }
+
       console.log('Sign in attempt:', { username, password });
+
+      alert("✅ Login Successful!");
+
+      // window.location.href = "dashboard.html";
     });
   }
 
+  // Redirect to Register Page
   const createAccountBtn = document.getElementById('createAccountBtn');
   if (createAccountBtn) {
     createAccountBtn.addEventListener('click', function () {
-      alert('Redirect to Register page');
+      window.location.href = "regis.html";
     });
   }
-// Falls back to text initials if the crest image fails to load
-function handleCrestError(img) {
-  img.style.display = 'none';
-  img.nextElementSibling.style.display = 'flex';
-}
 
-
-  // Register form handler
+  // ================= REGISTER =================
   const registerForm = document.getElementById('registerForm');
+
   if (registerForm) {
     registerForm.addEventListener('submit', function (event) {
       event.preventDefault();
@@ -44,9 +53,10 @@ function handleCrestError(img) {
         errorEl.style.display = 'block';
         return;
       }
+
       errorEl.style.display = 'none';
 
-      // TODO: connect to your registration endpoint
+      // Registration data
       const formData = {
         fullName: document.getElementById('fullName').value,
         email: document.getElementById('email').value,
@@ -54,42 +64,18 @@ function handleCrestError(img) {
         address: document.getElementById('address').value,
         password: password
       };
+
       console.log('Registration attempt:', formData);
+
+      // SUCCESS MESSAGE
+      const goLogin = confirm(
+        "✅ Account Created Successfully!\n\nClick OK to go to the Login page."
+      );
+
+      if (goLogin) {
+        window.location.href = "index.html";
+      }
     });
   }
- 
-    // Redirect to Registration Page
-    document.getElementById("createAccountBtn").addEventListener("click", function () {
-        window.location.href = "regis.html";
-    });
-
-    // Logo fallback
-    function handleCrestError(img) {
-        img.style.display = "none";
-        const fallback = img.nextElementSibling;
-        if (fallback) {
-            fallback.style.display = "flex";
-            fallback.style.alignItems = "center";
-            fallback.style.justifyContent = "center";
-        }
-    }
-
-    // Login Demo
-    document.getElementById("loginForm").addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
-
-        if (username === "" || password === "") {
-            alert("Please enter your username and password.");
-            return;
-        }
-
-        alert("Login Successful!");
-        // Example:
-        // window.location.href = "dashboard.html";
-    });
-
 
 });

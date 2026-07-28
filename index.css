@@ -9,6 +9,35 @@
   --hairline: #dcdfe6;
 }
 
+/* ===== Background Image ===== */
+body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+
+/* ===== Background Image ===== */
+.background{
+    position: fixed;
+    inset: 0;
+    background: url("background.jpg") center center/cover no-repeat;
+    filter: blur(2px);        /* Mas klaro ang picture */
+    transform: scale(1.03);
+    z-index: -2;
+}
+
+.background::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.20);  /* Light overlay */
+}
+
+.portal{
+    position:relative;
+    z-index:1;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -23,7 +52,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 10px;
 }
 
 .portal {

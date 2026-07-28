@@ -16,6 +16,9 @@
 </head>
 <body>
 
+<!-- Background Image -->
+<div class="background"></div>
+
 <div class="portal">
 
     <div class="institutional">
@@ -66,12 +69,11 @@
 
         <p class="form-sub">
             Enter your credentials to access the reporting system.
-        </p>    
+        </p>
 
         <form id="loginForm">
 
             <div class="field">
-                
                 <input
                     type="text"
                     id="username"
@@ -80,7 +82,6 @@
             </div>
 
             <div class="field">
-                
                 <input
                     type="password"
                     id="password"
@@ -111,8 +112,9 @@
             <div class="line"></div>
         </div>
 
-        <!-- Link to Registration Page -->
-        <a href="regis.html" class="btn-secondary"
+        <!-- Create Account Button -->
+        <a href="regis.html"
+           class="btn-secondary"
            style="display:block; text-align:center; text-decoration:none;">
             Create an account
         </a>
@@ -126,6 +128,7 @@
 </div>
 
 <script>
+// Falls back to text initials if the crest image fails to load
 function handleCrestError(img) {
     img.style.display = "none";
     const fallback = img.nextElementSibling;
@@ -136,7 +139,8 @@ function handleCrestError(img) {
     }
 }
 
-document.getElementById("loginForm").addEventListener("submit", function(e){
+// Login form handler
+document.getElementById("loginForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
     // Replace this with your actual login logic
